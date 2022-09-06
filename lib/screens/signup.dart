@@ -19,12 +19,6 @@ class _SignupScreenState extends State<SignupScreen> {
         // ignore: prefer_const_literals_to_create_immutables
         child: Stack(
           children: [
-            Image.asset(
-              "assets/background.jpg"  "Hi",
-              fit: BoxFit.cover,
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-            ),
             SingleChildScrollView(
               child: Column(children: [
                 // ignore: prefer_const_constructors
@@ -50,7 +44,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   isPassword: true,
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 10,
                 ),
                 EcoButton(
                   loginText: "Login",

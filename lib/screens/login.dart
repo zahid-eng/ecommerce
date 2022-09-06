@@ -19,12 +19,6 @@ class _LoginScreenState extends State<LoginScreen> {
         // ignore: prefer_const_literals_to_create_immutables
         child: Stack(
           children: [
-            Image.asset(
-              "assets/background.jpg",
-              fit: BoxFit.cover,
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-            ),
             SingleChildScrollView(
               child: Column(children: [
                 // ignore: prefer_const_constructors
@@ -41,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 EcotextField(
                   text: "Enter Email",
+                  icon: Icon(Icons.mail),
                 ),
                 EcotextField(
                   text: "Enter Password",

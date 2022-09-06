@@ -4,7 +4,8 @@ import 'package:my_project/utils/colors.dart';
 class EcotextField extends StatelessWidget {
   String? text;
   bool? isPassword = false;
-  EcotextField({this.text, this.isPassword});
+  Icon? icon;
+  EcotextField({this.text, this.isPassword, this.icon});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,6 +18,7 @@ class EcotextField extends StatelessWidget {
       child: TextFormField(
         obscureText: isPassword ?? false,
         decoration: InputDecoration(
+            suffixIcon: icon,
             contentPadding: EdgeInsets.all(10),
             hintText: text ?? "hintext",
             hintStyle: TextStyle(color: Colors.white),
