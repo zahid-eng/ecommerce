@@ -11,6 +11,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController emailC = TextEditingController();
+  TextEditingController passC = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,11 +38,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 EcotextField(
                   text: "Enter Email",
-                  icon: Icon(Icons.mail),
+                  controller: emailC,
                 ),
                 EcotextField(
                   text: "Enter Password",
                   isPassword: true,
+                  controller: passC,
                 ),
                 SizedBox(
                   height: 50,

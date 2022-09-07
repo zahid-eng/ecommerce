@@ -11,51 +11,58 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  TextEditingController emailC = TextEditingController();
+  TextEditingController passC = TextEditingController();
+  TextEditingController rtpassC = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         // ignore: prefer_const_literals_to_create_immutables
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Column(children: [
-                // ignore: prefer_const_constructors
-                Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Text(
-                    "Welcome\n Signup Page",
-                    style: Appstyle.boldStyle,
-                    textAlign: TextAlign.center,
+        child: Form(
+          child: Stack(
+            children: [
+              SingleChildScrollView(
+                child: Column(children: [
+                  // ignore: prefer_const_constructors
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Text(
+                      "Welcome\n Signup Page",
+                      style: Appstyle.boldStyle,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                EcotextField(
-                  text: "Enter UserName",
-                ),
-                EcotextField(
-                  text: "Enter Email",
-                ),
-                EcotextField(
-                  text: "Enter Password",
-                  isPassword: true,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                EcoButton(
-                  loginText: "Login",
-                  isLogin: true,
-                ),
-                EcoButton(
-                  loginText: "Create Account",
-                )
-              ]),
-            ),
-          ],
+                  SizedBox(height: 15),
+                  EcotextField(
+                    controller: emailC,
+                    text: "Enter Email",
+                  ),
+                  EcotextField(
+                    text: "Enter password",
+                    isPassword: true,
+                    controller: passC,
+                  ),
+                  EcotextField(
+                    text: "Retype Password",
+                    isPassword: true,
+                    controller: rtpassC,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  EcoButton(
+                    loginText: "Login",
+                    isLogin: true,
+                  ),
+                  EcoButton(
+                    loginText: "Create Account",
+                  )
+                ]),
+              ),
+            ],
+          ),
         ),
       ),
     );
