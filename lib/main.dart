@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_project/firebase_options.dart';
+import 'package:my_project/screens/home_screen.dart';
 import 'package:my_project/screens/login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:my_project/screens/signup.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +20,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textTheme: GoogleFonts.firaSansTextTheme(
+          Theme.of(context).textTheme,
+        ),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -30,7 +36,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SignupScreen(),
+      home: HomeScreen(),
     );
   }
 }
